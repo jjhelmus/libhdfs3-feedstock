@@ -34,6 +34,10 @@ requirements:
     - libxml2
     - krb5
     - libboost  {{ boost }}
+    - openssl
+    - curl
+  run:
+    - {{ pin_compatible('curl') }}
 
 test:
   commands:
