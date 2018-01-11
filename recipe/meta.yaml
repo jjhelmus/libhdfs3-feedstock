@@ -1,11 +1,6 @@
 {% set version = "2.3.0" %}
 # commit for 2.3.0 tag
-#{% set commit = "dc504af4a2445e9db836d3af9781ccc76c3856f2" %}
-# commit for concat tag
-#{% set commit = "df3df1fb273202220653dba3f270284a3f35182c" %}
-# master
-{% set commit = "84ebda7d76184963f298f061ae15fc13a9ce1646" %}
-
+{% set commit = "dc504af4a2445e9db836d3af9781ccc76c3856f2" %}
 
 package:
   name: libhdfs3
@@ -16,6 +11,7 @@ source:
   git_tag: {{ commit }}
   patches:
     - CMakeLists.txt.diff
+    - 84ebda7d.patch
 
 build:
   number: 1
