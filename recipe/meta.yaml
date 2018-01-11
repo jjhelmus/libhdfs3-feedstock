@@ -1,16 +1,24 @@
-{% set version = "2.2.31" %}
-{% set commit = "76c10dc2f2ffeb2977648379e60b33f09ef66989" %}
+{% set version = "2.3.0" %}
+# commit for 2.3.0 tag
+#{% set commit = "dc504af4a2445e9db836d3af9781ccc76c3856f2" %}
+# commit for concat tag
+#{% set commit = "df3df1fb273202220653dba3f270284a3f35182c" %}
+# master
+{% set commit = "84ebda7d76184963f298f061ae15fc13a9ce1646" %}
+
 
 package:
   name: libhdfs3
   version: {{ version }}
 
 source:
-  git_url: https://github.com/PivotalRD/libhdfs3.git
+  git_url: https://github.com/ContinuumIO/libhdfs3-downstream.git
   git_tag: {{ commit }}
+  patches:
+    - CMakeLists.txt.diff
 
 build:
-  number: 2
+  number: 1
   # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.
   skip: True  # [not linux]
   run_exports:
